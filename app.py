@@ -71,7 +71,9 @@ def generate_documents():
         variables = fixed_data.copy()
         variables["{NOM}"] = name.strip()
         
-        word_file = replace_variables(os.path.join(TEMPLATES_FOLDER, template_name), variables)
+        template_name = template_name.lower().replace(" ", "_").replace("é", "e").replace("è", "e").replace("ê", "e")
+	word_file = replace_variables(os.path.join(TEMPLATES_FOLDER, template_name), variables)
+
         word_files.append(word_file)
         
         pdf_file = convert_to_pdf(word_file)
