@@ -72,7 +72,7 @@ def generate_documents():
         variables["{NOM}"] = name.strip()
         
         template_name = template_name.lower().replace(" ", "_").replace("é", "e").replace("è", "e").replace("ê", "e")
-	word_file = replace_variables(os.path.join(TEMPLATES_FOLDER, template_name), variables)
+        word_file = replace_variables(os.path.join(TEMPLATES_FOLDER, template_name), variables)
 
         word_files.append(word_file)
         
