@@ -18,6 +18,10 @@ pdfkit_config = pdfkit.configuration(wkhtmltopdf="/usr/bin/wkhtmltopdf")  # Assu
 
 # Fonction pour remplacer les variables dans un fichier Word
 def replace_variables(template_path, variables):
+    import os
+    print("Contenu du dossier templates:", os.listdir(TEMPLATES_FOLDER))
+    print(f"Tentative d'ouverture du fichier : {template_path}")
+    
     doc = docx.Document(template_path)
     for paragraph in doc.paragraphs:
         for key, value in variables.items():
