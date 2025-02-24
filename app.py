@@ -8,6 +8,10 @@ import pdfkit
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return "Le serveur fonctionne ! 🚀"
+
 TEMPLATES_FOLDER = "templates/"
 OUTPUT_FOLDER = "output/"
 pdfkit_config = pdfkit.configuration(wkhtmltopdf="/usr/bin/wkhtmltopdf")  # Assurez-vous que wkhtmltopdf est installé
