@@ -91,4 +91,8 @@ def generate_documents():
 if __name__ == "__main__":
     os.makedirs(TEMPLATES_FOLDER, exist_ok=True)
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    
+    print(f"Création des dossiers : {TEMPLATES_FOLDER} et {OUTPUT_FOLDER}")
+    print(f"Contenu du dossier output après création : {os.listdir(OUTPUT_FOLDER) if os.path.exists(OUTPUT_FOLDER) else 'Non existant'}")
+    
     app.run(debug=True, host="0.0.0.0", port=5000)
